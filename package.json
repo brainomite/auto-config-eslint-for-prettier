@@ -2,9 +2,10 @@
   "name": "auto-config-eslint-for-prettier",
   "version": "0.0.1",
   "description": "Will configure eslintrc to use prettier",
-  "main": "index.js",
+  "main": "src/index.js",
+  "bin": "./cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -28,13 +29,12 @@
     "chai": "^4.2.0",
     "eslint": "^7.19.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-import": "^2.22.1",
     "mocha": "^8.2.1",
     "prettier": "^2.2.1",
-    "simon": "^0.2.3"
+    "sinon": "^9.2.4"
   },
   "dependencies": {
-    "prompts": "^2.4.0"
+    "stringify-object": "^3.3.0"
   }
 }
