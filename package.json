@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/brainomite/auto-config-eslint-for-prettier.git"
   },
+  "preview": true,
   "keywords": [
     "eslint",
     "prettier",
@@ -22,5 +23,15 @@
   "bugs": {
     "url": "https://github.com/brainomite/auto-config-eslint-for-prettier/issues"
   },
-  "homepage": "https://github.com/brainomite/auto-config-eslint-for-prettier#readme"
+  "homepage": "https://github.com/brainomite/auto-config-eslint-for-prettier#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "mocha": "^8.2.1",
+    "prettier": "^2.2.1",
+    "simon": "^0.2.3"
+  }
 }
