@@ -1,0 +1,26 @@
+{
+  "name": "auto-config-eslint-for-prettier",
+  "version": "0.0.1",
+  "description": "Will configure eslintrc to use prettier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brainomite/auto-config-eslint-for-prettier.git"
+  },
+  "keywords": [
+    "eslint",
+    "prettier",
+    "config",
+    "automatic",
+    "auto"
+  ],
+  "author": "Aaron Young",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brainomite/auto-config-eslint-for-prettier/issues"
+  },
+  "homepage": "https://github.com/brainomite/auto-config-eslint-for-prettier#readme"
+}
