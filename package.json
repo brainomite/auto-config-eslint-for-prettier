@@ -33,5 +33,8 @@
     "mocha": "^8.2.1",
     "prettier": "^2.2.1",
     "simon": "^0.2.3"
+  },
+  "dependencies": {
+    "prompts": "^2.4.0"
   }
 }
