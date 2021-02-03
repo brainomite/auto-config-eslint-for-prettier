@@ -39,8 +39,22 @@
 
 This software uses the following open source packages:
 
-- [Node.js](https://nodejs.org/)
+### Dependencies
+
 - [stringify-object](https://www.npmjs.com/package/stringify-object)
+
+### Development Dependencies
+
+- [chai](https://www.npmjs.com/package/chai)
+- [eslint](https://www.npmjs.com/package/eslint)
+- [generate-changelog](https://www.npmjs.com/package/generate-changelog)
+- [husky](https://www.npmjs.com/package/husky)
+- [mocha](https://www.npmjs.com/package/mocha)
+- [Node.js](https://nodejs.org/)
+- [nyc](https://www.npmjs.com/package/nyc)
+- [pinst](https://www.npmjs.com/package/pinst)
+- [prettier](https://www.npmjs.com/package/prettier)
+- [sinon](https://www.npmjs.com/package/sinon)
 
 ## License
 
