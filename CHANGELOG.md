@@ -1,3 +1,9 @@
+#### 0.0.8 (2021-02-03)
+
+##### Documentation Changes
+
+*  Add features under dev section in  README ([e58b50d2](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/e58b50d27748c8363959bb8c05e90c8bf32243e2))
+
 #### 0.0.7 (2021-02-03)
 
 ##### Documentation Changes
