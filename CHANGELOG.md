@@ -1,3 +1,9 @@
+#### 0.0.4 (2021-02-03)
+
+##### Documentation Changes
+
+*  Create initial README.md ([39ce1d24](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/39ce1d2460ee15fda7b70931f35e2f784f513edd))
+
 #### 0.0.3 (2021-02-03)
 
 ##### Chores
