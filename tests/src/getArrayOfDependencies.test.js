@@ -4,8 +4,8 @@ const sinon = require("sinon");
 const fs = require("fs");
 
 const {
-  getArrayOfDevDependencies,
-} = require("../../src/getArrayOfDevDependencies");
+  getStrArrayOfDevDependencies,
+} = require("../../src/getStrArrayOfDevDependencies");
 
 describe("getArrayOfDevDependencies", () => {
   let readFileSyncStub = sinon.stub;
@@ -65,7 +65,7 @@ describe("getArrayOfDevDependencies", () => {
         "stringify-object": "^3.3.0"
       }
     }`);
-    const actual = getArrayOfDevDependencies();
+    const actual = getStrArrayOfDevDependencies();
     expect(expected.sort()).to.eql(actual.sort());
   });
 });

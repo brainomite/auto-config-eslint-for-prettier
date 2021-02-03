@@ -1,5 +1,5 @@
 module.exports = {
-  pluginsToExtends: {
+  pluginsToExtendsObj: {
     "eslint-plugin-babel": "prettier/babel",
     "eslint-plugin-flowtype": "prettier/flowtype",
     "eslint-plugin-prettier": "prettier/prettier",
@@ -9,4 +9,5 @@ module.exports = {
     "eslint-plugin-vue": "prettier/vue",
     "@typescript-eslint/eslint-plugin": "prettier/@typescript-eslint",
   },
+  prettierStr: "prettier",
 };

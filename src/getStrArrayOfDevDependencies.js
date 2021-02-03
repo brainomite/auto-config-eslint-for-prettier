@@ -6,9 +6,9 @@ const fs = require("fs");
  * @returns {string[]} array of dev dependencies
  */
 
-function getArrayOfDevDependencies() {
-  const packageJsonPath = path.resolve("./", "package.json");
-  const projectJson = fs.readFileSync(packageJsonPath, {
+function getStrArrayOfDevDependencies() {
+  const packageJsonPathStr = path.resolve("./", "package.json");
+  const projectJson = fs.readFileSync(packageJsonPathStr, {
     encoding: "utf-8",
   });
   const projectJsObj = JSON.parse(projectJson);
@@ -17,4 +17,4 @@ function getArrayOfDevDependencies() {
   return Object.keys(devDependencies);
 }
 
-module.exports = { getArrayOfDevDependencies };
+module.exports = { getStrArrayOfDevDependencies };
