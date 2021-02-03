@@ -13,6 +13,7 @@
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#credits">Credits</a> •
+  <a href="features-under-development">Features Under Development</a> •
   <a href="#license">License</a>
 </p>
 
@@ -55,6 +56,14 @@ This software uses the following open source packages:
 - [pinst](https://www.npmjs.com/package/pinst)
 - [Prettier](https://www.npmjs.com/package/prettier)
 - [Sinon.js](https://www.npmjs.com/package/sinon)
+
+## Features Under Development
+
+- [ ] Detect if ESLint isn't setup
+- [ ] Support eslintrc in YAML format
+- [ ] Support eslintrc in TOML format
+- [ ] Optionally auto install of prettier and/or eslint-config-prettier
+- [ ] Optionally run eslint --config
 
 ## License
 
