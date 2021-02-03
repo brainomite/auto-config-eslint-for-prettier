@@ -45,16 +45,16 @@ This software uses the following open source packages:
 
 ### Development Dependencies
 
-- [chai](https://www.npmjs.com/package/chai)
-- [eslint](https://www.npmjs.com/package/eslint)
-- [generate-changelog](https://www.npmjs.com/package/generate-changelog)
-- [husky](https://www.npmjs.com/package/husky)
-- [mocha](https://www.npmjs.com/package/mocha)
+- [Chai](https://www.npmjs.com/package/chai)
+- [ESLint](https://www.npmjs.com/package/eslint)
+- [Generate Changelog](https://www.npmjs.com/package/generate-changelog)
+- [Husky](https://www.npmjs.com/package/husky)
+- [Mocha](https://www.npmjs.com/package/mocha)
 - [Node.js](https://nodejs.org/)
 - [nyc](https://www.npmjs.com/package/nyc)
 - [pinst](https://www.npmjs.com/package/pinst)
-- [prettier](https://www.npmjs.com/package/prettier)
-- [sinon](https://www.npmjs.com/package/sinon)
+- [Prettier](https://www.npmjs.com/package/prettier)
+- [Sinon.js](https://www.npmjs.com/package/sinon)
 
 ## License
 
