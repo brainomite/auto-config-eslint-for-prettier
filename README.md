@@ -3,8 +3,8 @@
 <h4 align="center">A cli tool to setup correct prettier extends in the .eslintrc.js file.</h4>
 
 <p align="center">
-  <a href="https://badge.fury.io/js/electron-markdownify">
-    <img src="https://badge.fury.io/js/electron-markdownify.svg"
+  <a href="https://badge.fury.io/js/auto-config-eslint-for-prettier">
+    <img src="https://badge.fury.io/js/auto-config-eslint-for-prettier.svg"
          alt="Gitter">
   </a>
 </p>
@@ -15,8 +15,6 @@
   <a href="#credits">Credits</a> •
   <a href="#license">License</a>
 </p>
-
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
 
 ## Key Features
 
