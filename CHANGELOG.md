@@ -1,3 +1,9 @@
+#### 0.0.5 (2021-02-03)
+
+##### Documentation Changes
+
+*  Remove picture from README.md ([b51983ac](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/b51983ac5ab6206ec8e4c7a1d2e4ed95c51e08ea))
+
 #### 0.0.4 (2021-02-03)
 
 ##### Documentation Changes
