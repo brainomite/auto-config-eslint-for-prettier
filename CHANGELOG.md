@@ -1,3 +1,9 @@
+#### 0.0.7 (2021-02-03)
+
+##### Documentation Changes
+
+*  Fix credit spellings in README ([8cbefc4e](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/8cbefc4e157372e68cdcd71da416714d19aa49d9))
+
 #### 0.0.6 (2021-02-03)
 
 ##### Documentation Changes
