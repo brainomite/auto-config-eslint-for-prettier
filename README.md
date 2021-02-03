@@ -1,6 +1,6 @@
 # auto-config-eslint-for-prettier
 
-<h4 align="center">A cli tool to setup correct prettier extends in the .eslintrc.js file.</h4>
+<h4 align="center">A cli tool to correctly configure Prettier to work with ESLint.</h4>
 
 <p align="center">
   <a href="https://badge.fury.io/js/auto-config-eslint-for-prettier">
@@ -62,8 +62,10 @@ This software uses the following open source packages:
 - [ ] Detect if ESLint isn't setup
 - [ ] Support eslintrc in YAML format
 - [ ] Support eslintrc in TOML format
-- [ ] Optionally auto install of prettier and/or eslint-config-prettier
+- [ ] Optionally auto install of Prettier and/or eslint-config-prettier
 - [ ] Optionally run eslint --config
+- [ ] Provide option to setup VS Code for Prettier & ESLint to work together
+      correctly while minimizing squiggles
 
 ## License
 
