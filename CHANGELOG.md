@@ -1,3 +1,9 @@
+#### 0.0.10 (2021-02-03)
+
+##### Documentation Changes
+
+*  Fix CHANGELOG by removing redundant entries ([05916d75](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/05916d759f9f8221acd8532c037aa98f768dacda))
+
 #### 0.0.9 (2021-02-03)
 
 ##### Documentation Changes
