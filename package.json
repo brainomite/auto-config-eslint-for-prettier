@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "bin": "./cli.js",
   "scripts": {
-    "test": "mocha tests/**/*.test.js",
+    "test": "mocha tests/**/*.test.js tests/*.test.js",
     "coverage": "nyc --reporter=html --reporter=text npm test",
     "view-nyc-report": "npm run coverage && open coverage/index.html",
     "view-nyc-win-report": "npm run coverage && start coverage/index.html",
