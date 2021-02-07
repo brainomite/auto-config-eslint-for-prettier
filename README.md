@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/brainomite/auto-config-eslint-for-prettier/badge.svg?branch=main)](https://coveralls.io/github/brainomite/auto-config-eslint-for-prettier?branch=main)
+
 # auto-config-eslint-for-prettier
 
 <h4 align="center">A cli tool to correctly configure Prettier to work with ESLint.</h4>
