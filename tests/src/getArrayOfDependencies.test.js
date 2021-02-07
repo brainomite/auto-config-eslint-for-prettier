@@ -12,9 +12,7 @@ describe("getArrayOfDevDependencies", () => {
   beforeEach(() => {
     readFileSyncStub = sinon.stub(fs, "readFileSync");
   });
-  afterEach(() => {
-    readFileSyncStub.restore();
-  });
+  afterEach(() => readFileSyncStub.restore());
   it("generates an array of dependencies from package.json", () => {
     const expected = [
       "chai",
@@ -67,5 +65,11 @@ describe("getArrayOfDevDependencies", () => {
     }`);
     const actual = getStrArrayOfDevDependencies();
     expect(expected.sort()).to.eql(actual.sort());
+  });
+  it("Handle if there is no devDependencies key", () => {
+    readFileSyncStub.returns("{}");
+    const expected = [];
+    const actual = getStrArrayOfDevDependencies();
+    expect(expected).to.eql(actual);
   });
 });
