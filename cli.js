@@ -13,11 +13,13 @@ function init(
   addPrettierToConfigFn = addPrettierToConfig,
   getStrArrayOfDevDependenciesFn = getStrArrayOfDevDependencies,
   getExtendsAdditionStrArrFn = getExtendsAdditionStrArr,
-  writeEslintrcJsFileFn = writeEslintrcJsFile
+  writeEslintrcJsFileFn = writeEslintrcJsFile,
+  requireEslintJsObjFn = requireEslintJsObj,
+  pathFn = path
 ) {
-  const eslintrcPath = path.resolve("./", ".eslintrc.js");
+  const eslintrcPath = pathFn.resolve("./", ".eslintrc.js");
 
-  const eslintrcObj = requireEslintJsObj(eslintrcPath);
+  const eslintrcObj = requireEslintJsObjFn(eslintrcPath);
 
   const devDependenciesArr = getStrArrayOfDevDependenciesFn();
   const extendsToAddArr = getExtendsAdditionStrArrFn(devDependenciesArr);
