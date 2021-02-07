@@ -7,6 +7,7 @@ const {
 } = require("./src/getStrArrayOfDevDependencies");
 const { getExtendsAdditionStrArr } = require("./src/getExtendsAdditionStrArr");
 const { writeEslintrcJsFile } = require("./src/writeEslintrcJsFile.js");
+const { requireEslintJsObj } = require("./src/requireEslintJsObj");
 
 function init(
   addPrettierToConfigFn = addPrettierToConfig,
@@ -16,8 +17,7 @@ function init(
 ) {
   const eslintrcPath = path.resolve("./", ".eslintrc.js");
 
-  // eslint-disable-next-line import/no-dynamic-require, global-require
-  const eslintrcObj = require(eslintrcPath);
+  const eslintrcObj = requireEslintJsObj(eslintrcPath);
 
   const devDependenciesArr = getStrArrayOfDevDependenciesFn();
   const extendsToAddArr = getExtendsAdditionStrArrFn(devDependenciesArr);
