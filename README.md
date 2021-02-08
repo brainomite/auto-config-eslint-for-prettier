@@ -1,5 +1,3 @@
-[![Coverage Status](https://coveralls.io/repos/github/brainomite/auto-config-eslint-for-prettier/badge.svg?branch=main)](https://coveralls.io/github/brainomite/auto-config-eslint-for-prettier?branch=main)
-
 # auto-config-eslint-for-prettier
 
 <h4 align="center">A cli tool to correctly configure Prettier to work with ESLint.</h4>
@@ -8,6 +6,10 @@
   <a href="https://badge.fury.io/js/auto-config-eslint-for-prettier">
     <img src="https://badge.fury.io/js/auto-config-eslint-for-prettier.svg"
          alt="Gitter">
+  </a>
+  <a href="https://coveralls.io/github/brainomite/auto-config-eslint-for-prettier?branch=main">
+    <img src="https://coveralls.io/repos/github/brainomite/auto-config-eslint-for-prettier/badge.svg?branch=main"
+         alt="Coverage Status">
   </a>
 </p>
 
@@ -55,7 +57,6 @@ This software uses the following open source packages:
 - [Mocha](https://www.npmjs.com/package/mocha)
 - [Node.js](https://nodejs.org/)
 - [nyc](https://www.npmjs.com/package/nyc)
-- [pinst](https://www.npmjs.com/package/pinst)
 - [Prettier](https://www.npmjs.com/package/prettier)
 - [Sinon.js](https://www.npmjs.com/package/sinon)
 
