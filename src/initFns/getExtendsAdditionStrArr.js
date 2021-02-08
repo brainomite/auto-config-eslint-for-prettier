@@ -1,12 +1,12 @@
-const { pluginsToExtendsObj, prettierStr } = require("./config");
+const { pluginsToExtendsObj, prettierStr } = require("../config");
 
 /**
  * returns an array of items to be added to the current extends
+ *
  * @param {string[]} [currentDependenciesStrArr = []] represents dependencies found
  * in the package.json
  * @returns {string[]} array of extends additions
  */
-
 function getExtendsAdditionStrArr(currentDependenciesStrArr = []) {
   const newDependenciesStrArr = [...currentDependenciesStrArr];
   const pluginsStrArr = Object.keys(pluginsToExtendsObj);

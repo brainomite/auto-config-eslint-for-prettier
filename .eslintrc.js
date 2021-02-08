@@ -2,24 +2,21 @@ module.exports = {
   env: {
     browser: true,
     commonjs: true,
-    es2021: true
+    es2021: true,
   },
-  extends: [
-    "airbnb-base",
-    "prettier"
-  ],
+  extends: ["airbnb-base", "plugin:jsdoc/recommended", "prettier"],
   parserOptions: {
-    ecmaVersion: 12
+    ecmaVersion: 12,
   },
+  plugins: ["jsdoc"],
   rules: {
     "id-length": [
       "error",
       {
         min: 2,
-        exceptions: [
-          "_"
-        ]
-      }
-    ]
-  }
-}
+        exceptions: ["_"],
+      },
+    ],
+    "jsdoc/require-description": ["error"],
+  },
+};

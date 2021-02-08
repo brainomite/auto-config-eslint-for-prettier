@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "bin": "./cli.js",
   "scripts": {
-    "test": "mocha tests/**/*.test.js tests/*.test.js",
+    "test": "mocha tests/**/*.test.js",
     "coverage": "nyc --reporter=html --reporter=text npm test",
     "coveralls": "NODE_ENV=test nyc --reporter=text-lcov npm test | coveralls",
     "view-nyc-report": "npm run coverage && open coverage/index.html",
@@ -39,6 +39,7 @@
     "eslint": "^7.19.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^31.6.1",
     "generate-changelog": "^1.8.0",
     "husky": "^5.0.8",
     "mocha": "^8.2.1",
@@ -47,6 +48,7 @@
     "sinon": "^9.2.4"
   },
   "dependencies": {
+    "js-yaml": "^4.0.0",
     "stringify-object": "^3.3.0"
   }
 }
