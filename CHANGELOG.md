@@ -1,3 +1,24 @@
+### 0.1.0 (2021-02-09)
+
+##### Chores
+
+*  Remove pinst from development dependencies ([f59db376](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/f59db3768e0f675dee042899916db0038a9b8af0))
+*  Update mocha test path ([da60a927](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/da60a927770d33645a1871fa3812703aa5e9de6a))
+
+##### New Features
+
+*  Add ability to read/write Yaml & JSON config ([f18c920b](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/f18c920b64ae2ebe37d2b046fa15ba8d62d5ba1e))
+*  Add travis config for coveralls badge ([d5b2f0b5](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/d5b2f0b55165d13b730dc508d3d9f94d61f6aecc))
+
+##### Refactors
+
+*  Add new param to init ([48295b41](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/48295b4154af2653e34f603d155e78335a2f432e))
+*  Relocate dynamic require to helper fnc ([beda6ecf](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/beda6ecf54561862ddac5dca3a06ecb994e6ac9b))
+
+##### Tests
+
+*  add tests for cli and requireEslintJsObj ([4090a8c3](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/4090a8c38f674bfdcec0dd5fb909c96121a94cff))
+
 #### 0.0.10 (2021-02-03)
 
 ##### Documentation Changes
