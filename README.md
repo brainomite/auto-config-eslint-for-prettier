@@ -46,6 +46,7 @@ This software uses the following open source packages:
 
 ### Dependencies
 
+- [js-yaml](https://www.npmjs.com/package/js-yaml)
 - [stringify-object](https://www.npmjs.com/package/stringify-object)
 
 ### Development Dependencies
@@ -63,12 +64,10 @@ This software uses the following open source packages:
 ## Features Under Development
 
 - [ ] Detect if ESLint isn't setup
-- [ ] Support eslintrc in YAML format
-- [ ] Support eslintrc in TOML format
+- [x] Support eslintrc in YAML format
+- [x] Support eslintrc in JSON format
 - [ ] Optionally auto install of Prettier and/or eslint-config-prettier
 - [ ] Optionally run eslint --config
-- [ ] Provide option to setup VS Code for Prettier & ESLint to work together
-      correctly while minimizing squiggles
 
 ## License
 

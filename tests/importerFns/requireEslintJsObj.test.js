@@ -2,13 +2,19 @@
 const { expect } = require("chai");
 const path = require("path");
 
-const { requireEslintJsObj } = require("../../src/requireEslintJsObj");
+const {
+  requireEslintJsObj,
+} = require("../../src/importerFns/requireEslintJsObj");
 
 describe("requireEslintJsObj", () => {
   it("returns the module.exports from a js file", () => {
     const expected = {};
-    const testFilePathStr = path.resolve("tests", "src", ".eslintrc.test.js");
+    const testFilePathStr = path.resolve(
+      "tests",
+      "initFns",
+      ".eslintrc.test.js"
+    );
     const actual = requireEslintJsObj(testFilePathStr);
-    expect(expected).to.eql(actual);
+    expect(actual).to.eql(expected);
   });
 });

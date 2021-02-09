@@ -1,12 +1,12 @@
-const { pluginsToExtendsObj, prettierStr } = require("./config");
+const { pluginsToExtendsObj, prettierStr } = require("../config");
 /**
  * adds to last position of extends, prettier
- * @param {Object} eslintrcObj represents the eslintrc file
+ *
+ * @param {object} eslintrcObj represents the eslintrc file
  * @param {string[]} eslintrcObj.extendsStrArr array of extends
  * @param {string[]} extendsToAddStrArr extends to add to the eslintrc
- * @returns {Object} a new version of eslintrc, not mutated
+ * @returns {object} a new version of eslintrc, not mutated
  */
-
 function addPrettierToConfig(eslintrcObj, extendsToAddStrArr) {
   const newEslintrcObj = { ...eslintrcObj };
   const { extends: oldExtendsStrArr } = newEslintrcObj;

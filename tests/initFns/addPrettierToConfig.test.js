@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
 const { expect } = require("chai");
-const { addPrettierToConfig } = require("../../src/addPrettierToConfig");
+const {
+  addPrettierToConfig,
+} = require("../../src/initFns/addPrettierToConfig");
 
 const EXPECTED = {
   env: { browser: true, commonjs: true, es2021: true },
@@ -18,7 +20,7 @@ describe("addPrettierToConfig", () => {
       rules: {},
     };
     const actual = addPrettierToConfig(eslintrc, ["prettier"]);
-    expect(EXPECTED).to.eql(actual);
+    expect(actual).to.eql(EXPECTED);
   });
   it("will only add missing extends", () => {
     const eslintrc = {
@@ -28,7 +30,7 @@ describe("addPrettierToConfig", () => {
       rules: {},
     };
     const actual = addPrettierToConfig(eslintrc, ["prettier"]);
-    expect(EXPECTED).to.eql(actual);
+    expect(actual).to.eql(EXPECTED);
   });
   it("Will fix order if prettier and related is in wrong location", () => {
     const eslintrc = {
@@ -39,6 +41,6 @@ describe("addPrettierToConfig", () => {
     };
 
     const actual = addPrettierToConfig(eslintrc, ["prettier"]);
-    expect(EXPECTED).to.eql(actual);
+    expect(actual).to.eql(EXPECTED);
   });
 });

@@ -10,4 +10,5 @@ module.exports = {
     "@typescript-eslint/eslint-plugin": "prettier/@typescript-eslint",
   },
   prettierStr: "prettier",
+  eslintrcFileNamesStrArr: [".eslintrc.js", ".eslintrc.yml", ".eslintrc.json"],
 };

@@ -5,7 +5,7 @@ const fs = require("fs");
 
 const {
   getStrArrayOfDevDependencies,
-} = require("../../src/getStrArrayOfDevDependencies");
+} = require("../../src/initFns/getStrArrayOfDevDependencies");
 
 describe("getArrayOfDevDependencies", () => {
   let readFileSyncStub = sinon.stub;
@@ -64,12 +64,12 @@ describe("getArrayOfDevDependencies", () => {
       }
     }`);
     const actual = getStrArrayOfDevDependencies();
-    expect(expected.sort()).to.eql(actual.sort());
+    expect(actual.sort()).to.eql(expected.sort());
   });
   it("Handle if there is no devDependencies key", () => {
     readFileSyncStub.returns("{}");
     const expected = [];
     const actual = getStrArrayOfDevDependencies();
-    expect(expected).to.eql(actual);
+    expect(actual).to.eql(expected);
   });
 });
