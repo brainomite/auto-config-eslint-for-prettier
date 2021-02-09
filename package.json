@@ -1,6 +1,6 @@
 {
   "name": "auto-config-eslint-for-prettier",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "description": "Will configure eslintrc to use prettier",
   "main": "src/index.js",
   "bin": "./cli.js",
