@@ -8,20 +8,27 @@ const initFns = require("../src/initFns");
 describe("init", () => {
   let addPrettierToConfigStub = sinon.stub();
   let getExtendsAdditionStrArrStub = sinon.stub();
-  let getStrArrayOfDevDependenciesStub = sinon.stub();
+  let getStrArrayOfDependenciesStub = sinon.stub();
   let getEslintrcPathStrStub = sinon.stub();
   let getEslintObjStub = sinon.stub();
   let writeEslintrcFileStub = sinon.stub();
+  let installPrettierExtensionsStub = sinon.stub();
+  let processExitStub = sinon.stub();
 
   beforeEach(() => {
+    processExitStub = sinon.stub(process, "exit");
+    installPrettierExtensionsStub = sinon.stub(
+      initFns,
+      "installPrettierExtensions"
+    );
     addPrettierToConfigStub = sinon.stub(initFns, "addPrettierToConfig");
     getExtendsAdditionStrArrStub = sinon.stub(
       initFns,
       "getExtendsAdditionStrArr"
     );
-    getStrArrayOfDevDependenciesStub = sinon.stub(
+    getStrArrayOfDependenciesStub = sinon.stub(
       initFns,
-      "getStrArrayOfDevDependencies"
+      "getStrArrayOfDependencies"
     );
     getEslintrcPathStrStub = sinon.stub(initFns, "getEslintrcPathStr");
     getEslintObjStub = sinon.stub(initFns, "getEslintObj");
@@ -29,16 +36,18 @@ describe("init", () => {
   });
 
   afterEach(() => {
+    processExitStub.restore();
+    installPrettierExtensionsStub.restore();
     addPrettierToConfigStub.restore();
     getExtendsAdditionStrArrStub.restore();
-    getStrArrayOfDevDependenciesStub.restore();
+    getStrArrayOfDependenciesStub.restore();
     getEslintrcPathStrStub.restore();
     getEslintObjStub.restore();
     writeEslintrcFileStub.restore();
   });
-  it("Runs all the functions", () => {
-    const devDependenciesArr = [];
-    getStrArrayOfDevDependenciesStub.returns(devDependenciesArr);
+  it("Runs all the functions", async () => {
+    const dependenciesArr = [];
+    getStrArrayOfDependenciesStub.returns(dependenciesArr);
 
     const newEslintConfigFile = {};
     addPrettierToConfigStub.returns(newEslintConfigFile);
@@ -52,11 +61,11 @@ describe("init", () => {
     const eslintObj = {};
     getEslintObjStub.returns(eslintObj);
 
-    init();
+    await init();
 
     expect(getEslintObjStub.firstCall.firstArg).to.equal(returnedPath);
     expect(getExtendsAdditionStrArrStub.firstCall.firstArg).to.equal(
-      devDependenciesArr
+      dependenciesArr
     );
     expect(addPrettierToConfigStub.firstCall.args[0]).to.equal(eslintObj);
     expect(addPrettierToConfigStub.firstCall.args[1]).to.equal(extendsArr);
@@ -64,5 +73,25 @@ describe("init", () => {
     expect(writeEslintrcFileStub.firstCall.args[1]).to.equal(
       newEslintConfigFile
     );
+    expect(installPrettierExtensionsStub.firstCall.firstArg).to.equal(
+      dependenciesArr
+    );
+  });
+  it("exits gracefully with a message and no zero exit code if packages don't install right", async () => {
+    const consoleLogStub = sinon.stub(console, "log");
+    installPrettierExtensionsStub.throws(new Error());
+    try {
+      await init();
+      // eslint-disable-next-line id-length, no-empty
+    } catch (e) {}
+    consoleLogStub.restore();
+
+    let expected = "Oops! Something went wrong! :(";
+    let actual = consoleLogStub.firstCall.firstArg;
+    expect(actual).to.equal(expected);
+
+    expected = 1;
+    actual = processExitStub.firstCall.firstArg;
+    expect(actual).to.equal(expected);
   });
 });
