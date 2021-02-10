@@ -8,7 +8,7 @@ function init() {
 
   const eslintrcObj = initFns.getEslintObj(eslintrcPath);
 
-  const devDependenciesArr = initFns.getStrArrayOfDevDependencies();
+  const devDependenciesArr = initFns.getStrArrayOfDependencies();
   const extendsToAddArr = initFns.getExtendsAdditionStrArr(devDependenciesArr);
   const newEslintrcFileObj = initFns.addPrettierToConfig(
     eslintrcObj,
