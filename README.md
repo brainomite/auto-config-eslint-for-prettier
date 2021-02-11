@@ -46,6 +46,7 @@ This software uses the following open source packages:
 
 ### Dependencies
 
+- [axios](https://www.npmjs.com/package/axios)
 - [cross-spawn](https://www.npmjs.com/package/cross-spawn)
 - [js-yaml](https://www.npmjs.com/package/js-yaml)
 - [Prompts](https://www.npmjs.com/package/prompts)
@@ -65,11 +66,11 @@ This software uses the following open source packages:
 
 ## Features Under Development
 
-- [ ] Detect if ESLint isn't setup
+- [x] Detect if ESLint isn't setup
 - [x] Support eslintrc in YAML format
 - [x] Support eslintrc in JSON format
 - [x] Optionally auto install of Prettier and/or eslint-config-prettier
-- [ ] Optionally run eslint --config
+- [ ] Add ability to download json rules
 
 ## License
 

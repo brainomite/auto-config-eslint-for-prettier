@@ -49,6 +49,7 @@
     "sinon": "^9.2.4"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "cross-spawn": "^7.0.3",
     "js-yaml": "^4.0.0",
     "prompts": "^2.4.0",
