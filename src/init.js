@@ -10,11 +10,12 @@ async function init() {
 
   const dependenciesArr = initFns.getStrArrayOfDependencies();
   const extendsToAddArr = initFns.getExtendsAdditionStrArr(dependenciesArr);
+
   try {
     await initFns.installPrettierExtensions(dependenciesArr);
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.log("Oops! Something went wrong! :(");
+    console.error("Oops! Something went wrong! :(");
     process.exit(1);
   }
 
