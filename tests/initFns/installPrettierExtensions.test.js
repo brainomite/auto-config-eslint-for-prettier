@@ -1,11 +1,15 @@
 /* eslint-disable no-undef */
-const { expect } = require("chai");
+const chai = require("chai");
 const sinon = require("sinon");
 const prompts = require("prompts");
 const spawn = require("cross-spawn");
+const chaiAsPromised = require("chai-as-promised");
 const {
   installPrettierExtensions,
 } = require("../../src/initFns/installPrettierExtensions");
+
+chai.use(chaiAsPromised);
+const { expect } = chai;
 
 describe("installPrettierExtensions", () => {
   let syncStub = sinon.stub();
@@ -69,5 +73,36 @@ describe("installPrettierExtensions", () => {
     await installPrettierExtensions(extensions);
     const actual = errorStub.firstCall.firstArg;
     expect(actual).to.equal(expected);
+  });
+
+  describe("When user aborts", () => {
+    const extensions = [];
+    beforeEach(() => {
+      prompts.inject([new Error()]);
+      infoStub.reset();
+    });
+
+    it("it doesn't execute sync", async () => {
+      const expected = false;
+      const actual = syncStub.called;
+      expect(actual).to.equal(expected);
+    });
+    it("It prints a message that packages were not installed", async () => {
+      const expected =
+        "Packages not installed. Please install the following packages with a package manager of your choice: prettier eslint-plugin-prettier";
+
+      try {
+        await installPrettierExtensions(extensions);
+        // eslint-disable-next-line no-empty
+      } catch {}
+
+      const actual = infoStub.firstCall.firstArg;
+      expect(actual).to.equal(expected);
+    });
+    it("raises an error", async () => {
+      await expect(installPrettierExtensions(extensions)).to.be.rejectedWith(
+        "aborted"
+      );
+    });
   });
 });

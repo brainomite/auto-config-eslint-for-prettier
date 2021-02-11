@@ -78,16 +78,16 @@ describe("init", () => {
     );
   });
   it("exits gracefully with a message and no zero exit code if packages don't install right", async () => {
-    const consoleLogStub = sinon.stub(console, "log");
+    const consoleErrorStub = sinon.stub(console, "error");
     installPrettierExtensionsStub.throws(new Error());
     try {
       await init();
       // eslint-disable-next-line id-length, no-empty
     } catch (e) {}
-    consoleLogStub.restore();
+    consoleErrorStub.restore();
 
     let expected = "Oops! Something went wrong! :(";
-    let actual = consoleLogStub.firstCall.firstArg;
+    let actual = consoleErrorStub.firstCall.firstArg;
     expect(actual).to.equal(expected);
 
     expected = 1;

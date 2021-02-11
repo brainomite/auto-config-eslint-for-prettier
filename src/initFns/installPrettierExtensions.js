@@ -3,7 +3,6 @@ const spawn = require("cross-spawn");
 const prompts = require("prompts");
 
 const PRETTIER_PACKAGES = ["prettier", "eslint-plugin-prettier"];
-
 /**
  * this will attempt, with the user's permission to install the missing
  * dependencies using npm
@@ -19,7 +18,7 @@ async function installPrettierExtensions(missingDependenciesArr) {
   if (!packagesToInstallArr.length) return undefined;
   const packageStr = packagesToInstallArr.join(" ");
   const message = `The following packages are missing: ${packageStr}. OK to Install?`;
-  const { value: okToProceedStr } = await prompts({
+  const { value: okToProceed = null } = await prompts({
     type: "toggle",
     name: "value",
     message,
@@ -28,10 +27,13 @@ async function installPrettierExtensions(missingDependenciesArr) {
     inactive: "no",
   });
   const pluralS = packagesToInstallArr.length > 1 ? "s" : "";
-  if (!okToProceedStr) {
+  if (!okToProceed) {
     console.info(
-      `Packages not installed. Please install the following package${pluralS} with a package manager of your choice: ${packageStr}`
+      `Package${pluralS} not installed. Please install the following package${pluralS} with a package manager of your choice: ${packageStr}`
     );
+    if (okToProceed === null) {
+      throw new Error("aborted");
+    }
     return undefined;
   }
   const result = spawn.sync("npm", ["i", "-D", ...packagesToInstallArr], {
