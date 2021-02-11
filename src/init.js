@@ -17,12 +17,10 @@ async function init() {
   try {
     eslintrcPath = initFns.getEslintrcPathStr();
   } catch (error) {
-    if (error.message === "No .eslintrc.* detected") {
-      console.error(
-        "No .eslintrc.* files located please run:\nnpx eslint --init\n"
-      );
-      exitGracefully();
-    }
+    console.error(
+      "No .eslintrc.* files located please run:\nnpx eslint --init\n"
+    );
+    exitGracefully();
   }
 
   const eslintrcObj = initFns.getEslintObj(eslintrcPath);
