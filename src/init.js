@@ -1,10 +1,29 @@
+/* eslint-disable no-console */
 const initFns = require("./initFns");
+
+/**
+ * This will exit in a nice manner
+ */
+function exitGracefully() {
+  console.error("Oops! Something went wrong! :(");
+  process.exit(1);
+}
 
 /**
  * main function
  */
 async function init() {
-  const eslintrcPath = initFns.getEslintrcPathStr();
+  let eslintrcPath;
+  try {
+    eslintrcPath = initFns.getEslintrcPathStr();
+  } catch (error) {
+    if (error.message === "No .eslintrc.* detected") {
+      console.error(
+        "No .eslintrc.* files located please run:\nnpx eslint --init\n"
+      );
+      exitGracefully();
+    }
+  }
 
   const eslintrcObj = initFns.getEslintObj(eslintrcPath);
 
@@ -14,9 +33,7 @@ async function init() {
   try {
     await initFns.installPrettierExtensions(dependenciesArr);
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.error("Oops! Something went wrong! :(");
-    process.exit(1);
+    exitGracefully();
   }
 
   const newEslintrcFileObj = initFns.addPrettierToConfig(
