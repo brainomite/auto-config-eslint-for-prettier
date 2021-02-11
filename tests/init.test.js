@@ -15,6 +15,8 @@ describe("init", () => {
   let writeEslintrcFileStub = sinon.stub();
   let installPrettierExtensionsStub = sinon.stub();
   let processExitStub = sinon.stub();
+  let addRulesToConfigStub = sinon.stub();
+  const oldProcessArgv = process.argv;
 
   beforeEach(() => {
     processExitStub = sinon.stub(process, "exit");
@@ -34,9 +36,11 @@ describe("init", () => {
     getEslintrcPathStrStub = sinon.stub(initFns, "getEslintrcPathStr");
     getEslintObjStub = sinon.stub(initFns, "getEslintObj");
     writeEslintrcFileStub = sinon.stub(initFns, "writeEslintrcFile");
+    addRulesToConfigStub = sinon.stub(initFns, "addRulesToConfig");
   });
 
   afterEach(() => {
+    addRulesToConfigStub.restore();
     processExitStub.restore();
     installPrettierExtensionsStub.restore();
     addPrettierToConfigStub.restore();
@@ -78,12 +82,20 @@ describe("init", () => {
       dependenciesArr
     );
   });
+  it('invokes addRulesToConfig with argument "rules=thinkful"', async () => {
+    process.argv = [...process.argv, "rules=thinkful"];
+    await init();
+    const expected = true;
+    const actual = addRulesToConfigStub.called;
+    expect(actual).to.equal(expected);
+  });
   describe("when an error is thrown", () => {
     let consoleErrorStub = sinon.stub();
     beforeEach(() => {
       consoleErrorStub = sinon.stub(console, "error");
     });
     afterEach(() => {
+      process.argv = oldProcessArgv;
       consoleErrorStub.restore();
     });
     it("exits gracefully with a message and no zero exit code if packages don't install right", async () => {
@@ -106,6 +118,17 @@ describe("init", () => {
       const eslintMsg = `No .eslintrc.* files located please run:
 npx eslint --init
 `;
+      const expected = [eslintMsg, OOPS_MESSAGE];
+      await init();
+      const actual = consoleErrorStub.getCalls().map((call) => call.firstArg);
+      expect(actual).to.eql(expected);
+
+      expect(processExitStub.firstCall.firstArg).to.equal(1);
+    });
+    it("exits gracefully if error downloading", async () => {
+      process.argv = [...process.argv, "rules=thinkful"];
+      addRulesToConfigStub.throws(new Error());
+      const eslintMsg = `There was a problem downloading the rules!`;
       const expected = [eslintMsg, OOPS_MESSAGE];
       await init();
       const actual = consoleErrorStub.getCalls().map((call) => call.firstArg);

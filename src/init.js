@@ -28,10 +28,13 @@ async function init() {
   const dependenciesArr = initFns.getStrArrayOfDependencies();
   const extendsToAddArr = initFns.getExtendsAdditionStrArr(dependenciesArr);
 
-  try {
-    await initFns.installPrettierExtensions(dependenciesArr);
-  } catch (error) {
-    exitGracefully();
+  if (process.argv.includes("rules=thinkful")) {
+    try {
+      await initFns.addRulesToConfig(eslintrcObj);
+    } catch (error) {
+      console.error("There was a problem downloading the rules!");
+      exitGracefully();
+    }
   }
 
   const newEslintrcFileObj = initFns.addPrettierToConfig(
@@ -39,6 +42,12 @@ async function init() {
     extendsToAddArr
   );
   initFns.writeEslintrcFile(eslintrcPath, newEslintrcFileObj);
+
+  try {
+    await initFns.installPrettierExtensions(dependenciesArr);
+  } catch (error) {
+    exitGracefully();
+  }
 }
 
 module.exports = { init };
