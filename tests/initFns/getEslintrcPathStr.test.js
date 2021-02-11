@@ -50,10 +50,4 @@ describe("getEslintrcPathStr", () => {
   it("throws error when no paths found", () => {
     expect(() => getEslintrcPathStr()).to.throw("No .eslintrc.* detected");
   });
-
-  it("throws error when multiple files are found", () => {
-    existSyncStub.returns(true);
-
-    expect(() => getEslintrcPathStr()).to.throw("multiple");
-  });
 });

@@ -22,10 +22,6 @@ function getEslintrcPathStr() {
     0
   );
 
-  if (numOfFoundFiles > 1) {
-    throw new Error("There were multiple eslintrc files found");
-  }
-
   const foundEslintrcFileObj = eslintrcObjArr.find(
     (eslintrcObj) => eslintrcObj.fileFoundBool
   );
