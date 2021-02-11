@@ -3,13 +3,21 @@ const initFns = require("./initFns");
 /**
  * main function
  */
-function init() {
+async function init() {
   const eslintrcPath = initFns.getEslintrcPathStr();
 
   const eslintrcObj = initFns.getEslintObj(eslintrcPath);
 
-  const devDependenciesArr = initFns.getStrArrayOfDevDependencies();
-  const extendsToAddArr = initFns.getExtendsAdditionStrArr(devDependenciesArr);
+  const dependenciesArr = initFns.getStrArrayOfDependencies();
+  const extendsToAddArr = initFns.getExtendsAdditionStrArr(dependenciesArr);
+  try {
+    await initFns.installPrettierExtensions(dependenciesArr);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log("Oops! Something went wrong! :(");
+    process.exit(1);
+  }
+
   const newEslintrcFileObj = initFns.addPrettierToConfig(
     eslintrcObj,
     extendsToAddArr

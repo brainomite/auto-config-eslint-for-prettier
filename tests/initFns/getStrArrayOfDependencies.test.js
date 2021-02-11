@@ -4,10 +4,10 @@ const sinon = require("sinon");
 const fs = require("fs");
 
 const {
-  getStrArrayOfDevDependencies,
-} = require("../../src/initFns/getStrArrayOfDevDependencies");
+  getStrArrayOfDependencies,
+} = require("../../src/initFns/getStrArrayOfDependencies");
 
-describe("getArrayOfDevDependencies", () => {
+describe("getArrayOfDependencies", () => {
   let readFileSyncStub = sinon.stub;
   beforeEach(() => {
     readFileSyncStub = sinon.stub(fs, "readFileSync");
@@ -22,6 +22,8 @@ describe("getArrayOfDevDependencies", () => {
       "mocha",
       "prettier",
       "sinon",
+      "prompts",
+      "stringify-object",
     ];
     readFileSyncStub.returns(`{
       "name": "auto-config-eslint-for-prettier",
@@ -63,13 +65,13 @@ describe("getArrayOfDevDependencies", () => {
         "stringify-object": "^3.3.0"
       }
     }`);
-    const actual = getStrArrayOfDevDependencies();
+    const actual = getStrArrayOfDependencies();
     expect(actual.sort()).to.eql(expected.sort());
   });
-  it("Handle if there is no devDependencies key", () => {
+  it("Handle if there is no dependencies key", () => {
     readFileSyncStub.returns("{}");
     const expected = [];
-    const actual = getStrArrayOfDevDependencies();
+    const actual = getStrArrayOfDependencies();
     expect(actual).to.eql(expected);
   });
 });
