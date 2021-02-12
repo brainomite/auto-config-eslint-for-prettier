@@ -1,9 +1,11 @@
 {
   "name": "auto-config-eslint-for-prettier",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Will configure eslintrc to use prettier",
   "main": "src/index.js",
-  "bin": "./cli.js",
+  "bin": {
+    "auto-config-eslint-for-prettier": "cli.js"
+  },
   "scripts": {
     "test": "mocha tests/**/*.test.js tests/*.test.js",
     "coverage": "nyc --reporter=html --reporter=text npm test",
