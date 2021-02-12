@@ -10,8 +10,6 @@
     "coveralls": "NODE_ENV=test nyc --reporter=text-lcov npm test | coveralls",
     "view-nyc-report": "npm run coverage && open coverage/index.html",
     "view-nyc-win-report": "npm run coverage && start coverage/index.html",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable",
     "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
