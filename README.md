@@ -1,11 +1,10 @@
-# auto-config-eslint-for-prettier
-
-<h4 align="center">A cli tool to correctly configure Prettier to work with ESLint.</h4>
+<h1 align="center">auto-config-eslint-for-prettier</h1>
+<h4 align="center">A cli tool to correctly configure ESLint to work with Prettier.</h4>
 
 <p align="center">
   <a href="https://badge.fury.io/js/auto-config-eslint-for-prettier">
     <img src="https://badge.fury.io/js/auto-config-eslint-for-prettier.svg"
-         alt="Gitter">
+         alt="npm version">
   </a>
   <a href="https://coveralls.io/github/brainomite/auto-config-eslint-for-prettier?branch=main">
     <img src="https://coveralls.io/repos/github/brainomite/auto-config-eslint-for-prettier/badge.svg?branch=main"
@@ -56,6 +55,12 @@ This software uses the following open source packages:
 
 - [Chai](https://www.npmjs.com/package/chai)
 - [ESLint](https://www.npmjs.com/package/eslint)
+- [chai-as-promised](https://www.npmjs.com/package/chai-as-promised)
+- [coveralls](https://www.npmjs.com/package/coveralls)
+- [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)
+- [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier)
+- [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
+- [eslint-plugin-jsdoc](https://www.npmjs.com/package/eslint-plugin-jsdoc)
 - [Generate Changelog](https://www.npmjs.com/package/generate-changelog)
 - [Husky](https://www.npmjs.com/package/husky)
 - [Mocha](https://www.npmjs.com/package/mocha)
@@ -70,7 +75,9 @@ This software uses the following open source packages:
 - [x] Support eslintrc in YAML format
 - [x] Support eslintrc in JSON format
 - [x] Optionally auto install of Prettier and/or eslint-config-prettier
-- [ ] Add ability to download json rules
+- [x] Add ability to download json(c) rules, from pre-defined keywords
+- [ ] Add ability to download json(c) rules, from arbitrary URLs
+- [ ] Add ability to read json(c) rules, from a local path
 
 ## License
 
