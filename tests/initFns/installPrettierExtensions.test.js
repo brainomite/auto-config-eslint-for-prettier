@@ -31,7 +31,7 @@ describe("installPrettierExtensions", () => {
     await installPrettierExtensions([
       "eslint",
       "prettier",
-      "eslint-plugin-prettier",
+      "eslint-config-prettier",
     ]);
     const actual = syncStub.called;
 
@@ -40,7 +40,7 @@ describe("installPrettierExtensions", () => {
   it("only installs prettier extensions", async () => {
     const expected = [
       "npm",
-      ["i", "-D", "prettier", "eslint-plugin-prettier"],
+      ["i", "-D", "prettier", "eslint-config-prettier"],
       { stdio: "inherit" },
     ];
     syncStub.returns({});
@@ -60,7 +60,7 @@ describe("installPrettierExtensions", () => {
     let actual = syncStub.called;
     expect(actual).to.equal(expected);
     expected =
-      "Packages not installed. Please install the following packages with a package manager of your choice: prettier eslint-plugin-prettier";
+      "Packages not installed. Please install the following packages with a package manager of your choice: prettier eslint-config-prettier";
     actual = infoStub.firstCall.firstArg;
     expect(actual).to.equal(expected);
   });
@@ -68,7 +68,7 @@ describe("installPrettierExtensions", () => {
     prompts.inject([true]);
     const extensions = ["prettier"];
     const expected =
-      "Could not execute npm. Please install the following package with a package manager of your choice: eslint-plugin-prettier";
+      "Could not execute npm. Please install the following package with a package manager of your choice: eslint-config-prettier";
     syncStub.returns({ error: { code: "ENOENT" } });
     await installPrettierExtensions(extensions);
     const actual = errorStub.firstCall.firstArg;
@@ -89,7 +89,7 @@ describe("installPrettierExtensions", () => {
     });
     it("It prints a message that packages were not installed", async () => {
       const expected =
-        "Packages not installed. Please install the following packages with a package manager of your choice: prettier eslint-plugin-prettier";
+        "Packages not installed. Please install the following packages with a package manager of your choice: prettier eslint-config-prettier";
 
       try {
         await installPrettierExtensions(extensions);

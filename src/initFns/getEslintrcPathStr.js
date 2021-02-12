@@ -16,12 +16,6 @@ function getEslintrcPathStr() {
     return eslintrcObj;
   });
 
-  const numOfFoundFiles = eslintrcObjArr.reduce(
-    (countNum, eslintrcObj) =>
-      eslintrcObj.fileFoundBool ? countNum + 1 : countNum,
-    0
-  );
-
   const foundEslintrcFileObj = eslintrcObjArr.find(
     (eslintrcObj) => eslintrcObj.fileFoundBool
   );

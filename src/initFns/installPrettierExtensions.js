@@ -2,7 +2,7 @@
 const spawn = require("cross-spawn");
 const prompts = require("prompts");
 
-const PRETTIER_PACKAGES = ["prettier", "eslint-plugin-prettier"];
+const PRETTIER_PACKAGES = ["prettier", "eslint-config-prettier"];
 /**
  * this will attempt, with the user's permission to install the missing
  * dependencies using npm
