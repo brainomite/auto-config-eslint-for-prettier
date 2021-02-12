@@ -1,3 +1,32 @@
+### 0.2.0 (2021-02-12)
+
+##### Chores
+
+*  Remove unused scripts ([7a70725d](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/7a70725d9dd01303c1e77906b820c7ab51648e6e))
+
+##### Documentation Changes
+
+*  Add to README motivation and add feature ([68e68f5b](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/68e68f5b12a4bfee3249e7cb8dcbfaf8d1ca19f7))
+*  Update README to reflect packages ([6ec86f29](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/6ec86f29002a201346826426ee6472e1a883da99))
+
+##### New Features
+
+*  Create argument rules=thinkful ([8731084c](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/8731084c46d80de234835d691b419c4e298dacbc))
+*  Add axios for rule downloads ([566ceede](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/566ceede6a18c23824161ca64443d49e81c95af8))
+*  Add ability to tell if 'eslint --init ran' ([2cdf3933](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/2cdf3933699371c4de2d43a5277fc6d32501fce3))
+*  Handle abort of prompts by end user ([298a7f1b](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/298a7f1bd978db3a803f65299aacc90511facbec))
+*  Add ability for program to install packages ([fce646e3](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/fce646e3943f461958b028e9af96631269641e62))
+*  Transform getStrArrayOfDevDependencies ([51cecea6](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/51cecea6c9800f27f92dba61a360bf61891cc2f5))
+
+##### Bug Fixes
+
+*  Remove unused variable ([8d8c6b6d](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/8d8c6b6da14d732188306af26702c3eb26ad9f8b))
+*  tests were not passing ([d1b3df18](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/d1b3df18535177633569c7b78e69bba0830fd262))
+
+##### Refactors
+
+*  Refactor init.js into multiple helpers ([f84bc25a](https://github.com/brainomite/auto-config-eslint-for-prettier/commit/f84bc25ae3b89fe594a05f04bcda81ec4a2e444c))
+
 ### 0.1.0 (2021-02-09)
 
 ##### Chores

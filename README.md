@@ -20,6 +20,29 @@
   <a href="#license">License</a>
 </p>
 
+## Motivation
+
+There is a lot of confusion about how to get [Prettier](https://prettier.io/)
+and [ESLint](https://eslint.org/) to work together. I wanted to create a tool
+that will automagically implement the recommended configurations of ESLint to
+work with Prettier. I also wanted it to work similar to `eslint --init`
+
+To start with, the only mention ESLint makes of Prettier is on their GitHub
+page's
+[FAQ Section](https://github.com/eslint/eslint#does-prettier-replace-eslint),
+but no further directions.
+
+Prettier makes
+[two methodologies](https://prettier.io/docs/en/integrating-with-linters.html)
+available to integrate with ESLint, but one
+[isn't recommended](https://prettier.io/docs/en/integrating-with-linters.html#notes).
+Furthermore, the suggested
+[additional package](https://github.com/prettier/eslint-config-prettier)
+requires configurations of the `.eslintrc.*` file mentioned in the
+[instructions](https://github.com/prettier/eslint-config-prettier#installation)!
+
+This is a bunch of steps that can and now is automated.
+
 ## Key Features
 
 - Updates .eslintrc.js file with correct prettier extends for known plugins
@@ -32,6 +55,9 @@
     - `eslint-plugin-standard`
     - `eslint-plugin-unicorn`
     - `eslint-plugin-vue`
+- Determines and installs missing npm packages for the configuration of ESLint
+  - prettier
+  - eslint-config-prettier
 
 ## How To Use
 
@@ -71,7 +97,7 @@ This software uses the following open source packages:
 
 ## Features Under Development
 
-- [x] Detect if ESLint isn't setup
+- [x] Detect if ESLint isn't setup yet
 - [x] Support eslintrc in YAML format
 - [x] Support eslintrc in JSON format
 - [x] Optionally auto install of Prettier and/or eslint-config-prettier
